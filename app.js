@@ -28,9 +28,9 @@ app.post("/", function(req, res){
         const icon = weatherData.weather[0].icon;
         const weatherDescription = weatherData.weather[0].description;
         const imageURL = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
-      
+
         res.write("<body style = 'background-image:url(https://scontent.fdet1-1.fna.fbcdn.net/v/t1.6435-9/73425136_145568173468730_7728657992609955840_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=O15AcfXqLIsAX9WEkXG&_nc_ht=scontent.fdet1-1.fna&oh=00_AT_XyFPX_UpmtY2Lg0-jNrEzbt6MpiXYv01BKRBfzyfyVQ&oe=62318059)'>");
-        res.write("<h1>Right now we have  " + weatherDescription + '<img src=' + "</h1>");
+        res.write("<h1>Right now:  " + weatherDescription + "</h1>");
         res.write("<h1>The temperature in " + query + " is " + temp + " degrees</h1>");
         res.write("<img src=" + imageURL + ">");
         res.write("<br>");
