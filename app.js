@@ -28,8 +28,12 @@ app.post("/", function(req, res){
         const icon = weatherData.weather[0].icon;
         const weatherDescription = weatherData.weather[0].description;
         const imageURL = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
-
-        res.write("<body style = 'background-image:url(https://scontent.fdet1-1.fna.fbcdn.net/v/t1.6435-9/73425136_145568173468730_7728657992609955840_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=O15AcfXqLIsAX9WEkXG&_nc_ht=scontent.fdet1-1.fna&oh=00_AT_XyFPX_UpmtY2Lg0-jNrEzbt6MpiXYv01BKRBfzyfyVQ&oe=62318059)'></body>");
+        res.write("<head><meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no' />");
+        res.write("<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>");
+        res.write("<meta charset='utf-8'>");
+        res.write("<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3' crossorigin='anonymous'>");
+        res.write("</head>")
+        res.write("<body style= 'background-image:url(https://scontent.fdet1-1.fna.fbcdn.net/v/t1.6435-9/67644064_107197060639175_7781083183763685376_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=KJWmbJNLkekAX-9r7V0&_nc_ht=scontent.fdet1-1.fna&oh=00_AT_uYdcASVyhzyDs_d90vXcYmjTfjbsSZArCrEgXXSvWlw&oe=623492BB)'></body>");
         res.write("<h1>Right now:  " + weatherDescription + "</h1>");
         res.write("<h1>The temperature in " + query + " is " + temp + " degrees</h1>");
         res.write("<img src=" + imageURL + ">");
