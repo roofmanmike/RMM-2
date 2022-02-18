@@ -39,21 +39,25 @@
     body{
       background-color: gainsboro;
       text-align: center;
-      background-image: url("https://scontent.fdet1-1.fna.fbcdn.net/v/t1.6435-9/74634680_145568873468660_1633695294703009792_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=7p_Q-fPQYOMAX-5WxFp&_nc_ht=scontent.fdet1-1.fna&oh=00_AT8GZHZMctz0xWJpuf9AAiGBdDs4mbvfFVhVoHRgMkKN2Q&oe=62298899");
+    }
+    form {
+      position: absolute;
     }
     label{
-      color:yellow;
+      color:blue;
       padding: 10px;
+    }
+    button{
+      background-color: lightgreen;
     }
     footer {
       background-color: black;
-      opacity: 50%;
       padding: 20px;
       bottom: 0px;
-      position: absolute;
+      position: relative;
     }
-    footer h3,  h4{
-      color:white;
+    h1, h2, h3, h4 ,h5 {
+      color: white;
     }
     a{
       text-decoration: none;
@@ -62,7 +66,11 @@
     p{
       color: white;
     }
-
+    .div_text{
+      position: absolute;
+      left: 30%;
+      top: 20%;
+    }
     </style>
   </head>
   <body>
@@ -70,18 +78,31 @@
     <label for="cityInput">Live weather data, enter city or zip:  </label>
     <input id="cityInput" type="text" name="cityName">
     <button type="submit">Go</button>
+
     </form>
-    <h4>If you have a roof problem...</h4>
-    <h4>And if nobody can help...</h4>
-    <h4>And if you can find him...</h4>
-    <h3>Maybe you can hire~</h3>
-    <h1><a href="https://www.roofmanmike.com"><span class="glow">RoofManMike</span></h1>
+
+<div class="div_text">
+
+  <h1>If you have a roof problem...</h1>
+  <br>
+  <h2>And if nobody can help...</h2>
+<br>
+  <h3>And if you can find him...</h3>
+<br>
+  <h4>Maybe you can hire~</h4>
+  <br>
+  <h1><a href="https://www.roofmanmike.com"><span class="glow">RoofManMike</span></h1>
+</div>
+
+    <div class="pic_div">
+
+      <img src="https://scontent.fdet1-2.fna.fbcdn.net/v/t1.6435-9/67422228_101051981253683_2394995393428455424_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=174925&_nc_ohc=EIYeY5aAOiEAX_Vaj2V&_nc_ht=scontent.fdet1-2.fna&oh=00_AT_RQkKb2y4E_e409n2wwATpfdgH7pks3F8fgxD6gUN_uQ&oe=62343541" alt="">
+    </div>
+
   </body>
-  <br><br><br>
   <footer>
-      <h2>Website and App Develeopment by RoofManMike</h2>
-      <h2>Live, interactive API weather data with NodeJs and Express</h2>
+      <h2 style="color:white">Website and App Develeopment by RoofManMike</h2>
+      <h2 style="color:white">Live, interactive API weather data with NodeJs and Express</h2>
 
     </footer>
-    <br><br><br><br>
 </html>
