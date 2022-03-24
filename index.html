@@ -1,108 +1,79 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <meta charset="utf-8">
-    <title>RoofManMike's App</title>
-
+    <title>Calculator</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <style media="screen">
-
-    .div_glow {
-   min-width: 100%;
-   min-height: 100%
-   background-color: black;
-   font-family: cursive;
- }
-.pic_div {
-  min-width: 100%;
-  min-height: 100%;
-}
- .glow {
-   font-size: inherit;
-   color: #fff;
-   text-align: center;
-   animation: glow 1s ease-in-out infinite alternate;
- }
-
- @-webkit-keyframes glow {
-   from {
-     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00e63e, 0 0 40px #857b34, 0 0 50px #59fb09, 0 0 60px #41e600, 0 0 70px #06db0e;
-   }
-
-   to {
-     text-shadow: 0 0 20px #fff, 0 0 30px #090b6e, 0 0 40px #2878f5, 0 0 50px #272cfb, 0 0 60px #2c1795, 0 0 70px #190cbf, 0 0 80px #13089f;
-   }
- }
-
-    body{
-      background-color: gainsboro;
-      text-align: center;
-    }
-    form {
-      position: absolute;
-    }
-    label{
-      color:blue;
-      padding: 10px;
-    }
-    button{
-      background-color: lightgreen;
-    }
-    footer {
-      background-color: black;
-      padding: 20px;
-      bottom: 0px;
-      position: relative;
-    }
-    h1, h2, h3, h4 ,h5 {
-      color: white;
-    }
-    a{
-      text-decoration: none;
-      color: white;
-    }
-    p{
-      color: white;
-    }
-    .div_text{
-      position: absolute;
-      left: 30%;
-      top: 20%;
-    }
+    <style>
+      body{
+        background-color: darkslategrey;
+        text-align: center;
+        padding: 0%;
+      }
+      footer{
+        background-color: black;
+      }
+      footer p{
+        position: relative;
+        display:flexbox;
+        color: white;
+      }
+      ul{
+        color: white;
+      }
+      h1{
+        color: white;
+      }
+      input{
+        background-color: rgb(89, 250, 40);
+        border-radius: 7px;
+      }
+      placeholder{
+        color:white;
+      }
+      p{
+        font-size: x-large;
+        color: white;
+      }
+      button{
+        color: white;
+        background-color:rgb(119, 0, 255);
+        border-radius: 7px;
+      }
+      .test1{
+        font-size: x-large;
+      }
     </style>
   </head>
   <body>
-    <form action="/" method="post" class="container-fluid">
-    <label for="cityInput">Live weather data, enter city or zip:  </label>
-    <input id="cityInput" type="text" name="cityName">
-    <button type="submit">Go</button>
-
+    <h1 id="demo">Current Market TPO System Online Quote</h1>
+    <div class="test1 container-fluid">
+    <p>Enter the run-off (gutter or drain side) as WIDTH</p>
+    <p>Include the walls up and over 6" -rounded to the next foot</p>
+    <form action="/" method="post">
+      <input type="number" name="num1" placeholder="LENGTH"><br><br>
+      <input type="number" name="num2" placeholder="WIDTH"><br><br>
+      <input type="number" id="gutterHide" name="num3" placeholder="GUTTER LENGTH"><br><br>
+      <input type="number" id="copingHide" name="num4" placeholder="COPING LENGTH"><br><br>
+      <input type="number" id="num5" name="num5" placeholder="HEIGHT IN STORIES"><br><br>
+      <button type="submit" name="submit">Calculate</button><br>
     </form>
-
-<div class="div_text">
-
-  <h1>If you have a roof problem...</h1>
-  <br>
-  <h2>And if nobody can help...</h2>
-<br>
-  <h3>And if you can find him...</h3>
-<br>
-  <h4>Maybe you can hire~</h4>
-  <br>
-  <h1><a href="https://www.roofmanmike.com"><span class="glow">RoofManMike</span></h1>
-</div>
-
-    <div class="pic_div">
-
-      <img src="https://scontent.fdet1-2.fna.fbcdn.net/v/t1.6435-9/67422228_101051981253683_2394995393428455424_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=174925&_nc_ohc=EIYeY5aAOiEAX_Vaj2V&_nc_ht=scontent.fdet1-2.fna&oh=00_AT_RQkKb2y4E_e409n2wwATpfdgH7pks3F8fgxD6gUN_uQ&oe=62343541" alt="">
+    <br>
     </div>
-
-  </body>
-  <footer>
-      <h2 style="color:white">Website and App Develeopment by RoofManMike</h2>
-      <h2 style="color:white">Live, interactive API weather data with NodeJs and Express</h2>
-
+    <footer>
+      <br>
+      <p>Specs:</p>
+        <p>1/4" to 1/2" barrier insulation</p>
+        <p>20 Year, Maintenance Free, Reflective and Reinforced .060mil TPO</p>
+        <p>Colored, galvanized, cleated compression fascia/coping</p>
+        <p>Colored, Galvanized, Flanged, 6" Commercial Boxed Gutters</p>
+        <p>10% is added for waste, 5% for curbs and miscellaneous flashing</p>
+      <br>
     </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+  </body>
 </html>
