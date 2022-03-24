@@ -1,10 +1,10 @@
 //jshint esversion6
 
-const express = require("express");
-const bodyParser = require("body-parser");
+import express from "express";
+import { urlencoded } from "body-parser";
 
 const app = express();
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(urlencoded({extended: true}));
 
 app.get("/", function(req, res){
   res.sendFile(__dirname + "/index.html");
@@ -39,9 +39,6 @@ var area = num1 * num2 * 5.5;
 var squares = num1 * num2;
 var gutter = num3 * 15;
 var coping = num4 * 12;
-
-
-
 if (num5 > 2){
   height = height * 1000;
 }
