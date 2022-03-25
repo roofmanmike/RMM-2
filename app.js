@@ -50,8 +50,6 @@ var result = area + num3 + gutter + coping + height;
 let ob = new Intl.NumberFormat('en-US');
 squares = ob.format(squares);
 area = ob.format(area);
-gutter = ob.format(gutter);
-coping = ob.format(coping);
 result = ob.format(result);
 res.write('<head><style>body{background-color:darkgrey; text-align:center;}hr{background-color:red;}</style></head>');
 res.write('<body>');
@@ -61,14 +59,16 @@ res.write('<h1>' + squares + ' sq ft</h1>');
 
 res.write('<h1>Before termination(s) and watershed: <span style="color:green">$</span>' + area + '</h1><hr>');
 if (gutter >= 1) {
+  gutter = ob.format(gutter);
   res.write('<h1>Gutters: <span style="color:green">$</span>' + gutter + '</h1>');  
 }
 if (coping >= 1) {
+  coping = ob.format(coping);
   res.write('<h1>Coping: <span style="color:green">$</span>' + coping + '</h1>');  
 }
 if (height >= 1) {
+  height = ob.format(height);
   res.write('<h1>' + num5 + ' story hazard: <span style="color:green">$</span>' + height + '</h1>');
-  
 }
 
 res.write('<h1 style="text-decoration:underline">Total: <span style="color:green">$</span>' + '<span style="color:red">' + result + '</span></h1>');
