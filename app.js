@@ -1,10 +1,11 @@
 //jshint esversion6
-
-import express from "express";
-import { urlencoded } from "body-parser";
+const express = require("express");
+const https = require("https");
+const bodyParser = require("body-parser");
 
 const app = express();
-app.use(urlencoded({extended: true}));
+
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.get("/", function(req, res){
   res.sendFile(__dirname + "/index.html");
@@ -39,6 +40,7 @@ var area = num1 * num2 * 5.5;
 var squares = num1 * num2;
 var gutter = num3 * 15;
 var coping = num4 * 12;
+
 if (num5 > 2){
   height = height * 1000;
 }
@@ -50,7 +52,7 @@ squares = ob.format(squares);
 area = ob.format(area);
 gutter = ob.format(gutter);
 coping = ob.format(coping);
-result = ob.format(result)
+result = ob.format(result);
 res.write('<head><style>body{background-color:darkgrey; text-align:center;}hr{background-color:red;}</style></head>');
 res.write('<body>');
 res.write('<h1>Valid thru 30 days from: ' + today + ': </h1>');
@@ -58,13 +60,13 @@ res.write('<h1>' + squares + ' sq ft</h1>');
 
 
 res.write('<h1>Before termination(s) and watershed: <span style="color:green">$</span>' + area + '</h1><hr>');
-if (gutter > 0) {
+if (gutter >= 1) {
   res.write('<h1>Gutters: <span style="color:green">$</span>' + gutter + '</h1>');  
 }
 if (coping >= 1) {
   res.write('<h1>Coping: <span style="color:green">$</span>' + coping + '</h1>');  
 }
-if (height > 0) {
+if (height >= 1) {
   res.write('<h1>' + num5 + ' story hazard: <span style="color:green">$</span>' + height + '</h1>');
   
 }
@@ -75,6 +77,6 @@ res.write('<img src="https://scontent.fdet1-1.fna.fbcdn.net/v/t1.6435-9/12276033
   res.send();
 })
 
-app.listen(3000, function(){
-  console.log("Server is running on port 3000.");
-});
+app.listen(process.env.PORT || 3000, function() {
+  console.log("Server is running");
+})
