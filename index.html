@@ -2,11 +2,12 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Calculator</title>
+    <title>TPO_RECOVER</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <style>
       body{
-        background-color: darkslategrey;
+        background-color: darkgreen;
+        background-image: url('https://scontent.fdet1-2.fna.fbcdn.net/v/t1.6435-9/67914370_107191823973032_2200838901436776448_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=8zNpa-6WwQgAX9b2qEv&_nc_ht=scontent.fdet1-2.fna&oh=00_AT8W3kMikwWoy6kO9G2-67KTwNDetS7ai_6q5A043oRfhw&oe=62645872');
         text-align: center;
         padding: 0%;
       }
@@ -22,13 +23,11 @@
         color: white;
       }
       h1{
-        color: white;
+        color: rgb(10, 107, 62);
       }
       input{
-        background-color: rgb(89, 250, 40);
+        background-color: black;
         border-radius: 7px;
-      }
-      placeholder{
         color:white;
       }
       p{
@@ -37,22 +36,29 @@
       }
       button{
         color: white;
-        background-color:rgb(119, 0, 255);
+        background-color:rgb(7, 146, 81);
         border-radius: 7px;
       }
       .test1{
         font-size: x-large;
       }
+      label{
+        color: rgb(10, 107, 62);
+      }
+      @media screen and (min-width: 500px) {
+  
+}
     </style>
   </head>
   <body>
-    <h1 id="demo">Current Market TPO System Online Quote</h1>
+    <h1 ><b>Current Market TPO System Online Quote</h1>
     <div class="test1 container-fluid">
-    <p>Enter the run-off (gutter or drain side) as WIDTH</p>
-    <p>Include the walls up and over 6" -rounded to the next foot</p>
+    <p style=" color:rgb(10, 107, 62)">Enter the run-off (gutter or drain side) as WIDTH first</p>
+    <p style="color:rgb(10, 107, 62)"> the walls up and over 6" -rounded to the next foot</b></p>
     <form action="/" method="post">
-      <input type="number" name="num1" placeholder="LENGTH"><br><br>
-      <input type="number" name="num2" placeholder="WIDTH"><br><br>
+      <label for="width"><b>Width at run-off</b></label><br>
+      <input type="number" id="width" name="num2" placeholder="WIDTH" required><br><br>
+      <input type="number" id="length" name="num1" placeholder="LENGTH" required><br><br>
       <input type="number" id="gutterHide" name="num3" placeholder="GUTTER LENGTH"><br><br>
       <input type="number" id="copingHide" name="num4" placeholder="COPING LENGTH"><br><br>
       <input type="number" id="num5" name="num5" placeholder="HEIGHT IN STORIES"><br><br>
@@ -68,6 +74,7 @@
         <p>Colored, galvanized, cleated compression fascia/coping</p>
         <p>Colored, Galvanized, Flanged, 6" Commercial Boxed Gutters</p>
         <p>10% is added for waste, 5% for curbs and miscellaneous flashing</p>
+        <p>Subtract wall areas for insulation takeoff</p>
       <br>
     </footer>
 

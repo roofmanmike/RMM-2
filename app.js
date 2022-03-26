@@ -45,14 +45,13 @@ if (num5 > 2){
   height = height * 1000;
 }
 else{height=0};
-
+let bgi1 = "https://scontent.fdet1-1.fna.fbcdn.net/v/t39.30808-6/270068506_772985370727004_4273636596333034815_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=730e14&_nc_ohc=fLdQouKzm0gAX_ZiZXY&_nc_ht=scontent.fdet1-1.fna&oh=00_AT-px2ALzQRCrtmvBL4AA9dIJEAdlbTuNJlWSJSaJ6m2vQ&oe=6243E74F";
 var result = area + num3 + gutter + coping + height;
 let ob = new Intl.NumberFormat('en-US');
 squares = ob.format(squares);
 area = ob.format(area);
 result = ob.format(result);
 res.write('<head><style>body{background-color:darkgrey; text-align:center;}hr{background-color:red;}</style></head>');
-res.write('<body>');
 res.write('<h1>Valid thru 30 days from: ' + today + ': </h1>');
 res.write('<h1>' + squares + ' sq ft</h1>');
 
