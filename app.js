@@ -74,8 +74,8 @@ if (height >= 1) {
 res.write('<h1 style="text-decoration:underline">Total: <span style="color:green">$</span>' + '<span style="color:red">' + result + '.00' + '</span></h1>');
 res.write('</body>' + '<footer>');
 res.write('<h3>Confirm this price and schedule your new roof with a core test~</h3>');
-res.write('<h1><a href="https://www.roofmanmike.com">(248)678-ROOF</a></h1>');
-res.write('<h1>Web and App Development by RoofManMike</h1></footer>');
+res.write('<h1><a href="tel:248-678-7663">(248)678-ROOF</a></h1>');
+res.write('<h1>Web and App Development by <a href="https://www.roofmanmike.com">RoofManMike&copy</a></h1></footer>');
 res.write('<img src="https://scontent.fdet1-1.fna.fbcdn.net/v/t1.6435-9/122760339_422026922489519_6417623735746863165_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=uTlQ-O9OijcAX98A3Fh&_nc_oc=AQkAH02PoTwcDSYYYP9lFtcfgEjxaJsyphVuQuUcUj6hvXxQyk80JdTxO4mjPbo8Vt4&_nc_ht=scontent.fdet1-1.fna&oh=00_AT_wD6qOn7rgEIDYC1gU67Ce35FZLmQKpms_Cx0Vq6aXEA&oe=6249EEFB" alt="">');
 res.send();
 })
