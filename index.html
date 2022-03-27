@@ -29,7 +29,7 @@
         color: rgb(10, 107, 62);
       }
       input{
-        background-color: black;
+        background-color: darkgrey;
         border-radius: 7px;
         color:white;
       }
@@ -87,16 +87,17 @@ form{
     <div class="container-fluid">
   <body>
     
+    
     <div class="fontUp container-fluid">
       <hr>
       <h1 ><b>Current Market TPO System Online Quote</h1>
         <hr>
 
         <div id="hiddenDiv2">
-          <p>Quote specs in footer below</p>
-          <p>click this button to proceed with your quote</p>
+          <p style="color:blue">Quote specs in footer below</p>
+          <p style="color:red">click this button to enter the dimensions of your roof</p>
           <br>
-      <button type="button" id="btnTest"name="btnTest"onclick="btnClick()">RoofManMike&trade;</button>
+      <button type="button" id="btnTest"name="btnTest"onclick="btnClick()"><b>GIMME QUOTE</b></button>
     </div>
 
 <div id="hiddenDiv">
@@ -107,7 +108,6 @@ form{
 
     <form action="/" method="post" id="form1">
       
-      <label for="width"><b>Width at run-off:</b></label><br>
       <input type="number" id="width" name="num2" placeholder="*WIDTH"><br><br>
       <input type="number" id="length" name="num1" placeholder="*LENGTH"><br><br>
       <input type="number" id="gutterHide" name="num3" placeholder="GUTTER LENGTH"><br><br>
@@ -154,17 +154,6 @@ form{
     </script>
 </body>
   <footer>
-    <br>
-    <p>Specs:</p>
-      <p>-Barrier insulation pending height, wind and foot traffic-</p>
-      <p>-1/4" Mechanically fastened, low profile areas off limits to public</p>
-      <p>-1/2" Fully adhered, additional insulation fasteners as per specs</p>
-      <p>-20 Year, Maintenance Free, Reflective and Reinforced .060mil TPO</p>
-      <p>-Colored, galvanized, cleated compression fascia/coping</p>
-      <p>-Colored, galvanized, flanged, 6" commercial boxed gutters</p>
-      <p>If you're on your own:</p>
-      <p>-Add 10% for waste, 5% for curbs and miscellaneous flashing</p>
-      <p>-Subtract wall areas for insulation takeoff</p>
-      <h4 style="color:lime"><b>RoofManMike&trade;</b></h4><br><br>
+    
   </footer>
 </html>
