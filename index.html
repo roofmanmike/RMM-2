@@ -38,7 +38,7 @@
         color: white;
       }
       button{
-        color: white;
+        color: red;
         background-color:rgb(255, 179, 14);
         border-radius: 7px;
       }
@@ -77,15 +77,12 @@ h3{
   <body>
     
     <div class="fontUp container-fluid">
+      <hr>
       <h1 ><b>Current Market TPO System Online Quote</h1>
+        <hr>
 
         <div id="hiddenDiv2">
-          <h3><b>How many sq ft is your building? </h3>
-          <label for="ttl">Enter total sq ft:</label><br>
-      <input type="number" id="userKnown" name="ttl" placeholder="Total Sq Ft"><br><br>
-      <button type="button" id="btnKnown"name="btnKnown"onclick="btnKnown()">Proceed</button><br><br>
-      <h3 style="color: white;">Or enter dimensions</b></h3><br>
-      <button type="button" id="btnTest"name="btnTest"onclick="btnClick()">ENTER</button>
+      <button type="button" id="btnTest"name="btnTest"onclick="btnClick()">RoofManMike&trade;</button>
     </div>
 
 <div id="hiddenDiv">
@@ -99,16 +96,16 @@ h3{
       <label for="width"><b>Width at run-off:</b></label><br>
       <input type="number" id="width" name="num2" placeholder="*WIDTH"><br><br>
       <input type="number" id="length" name="num1" placeholder="*LENGTH"><br><br>
-      <input type="number" id="swl" name="swl" placeholder="userKnown Area"><br><br>
       <input type="number" id="gutterHide" name="num3" placeholder="GUTTER LENGTH"><br><br>
       <input type="number" id="copingHide" name="num4" placeholder="COPING LENGTH"><br><br>
       <input type="number" id="num5" name="num5" placeholder="HEIGHT IN STORIES"><br><br>
-      <button type="submit" id="enter" name="submit">ENTER</button><br>
+      <button type="submit" id="enter" onclick="btnClick()" name="submit">ENTER</button><br>
     </form>
     <br>
     </div>
-    <br>
-    <p style="color:orange"><b>**Drain Detail options and more coming soon**</b></p>
+    <br><br><br>
+    <h3 id="color1"><b>**Drain Detail options and more coming soon**</b></h3>
+    <br><br>
     <div class="test2">
       <img src="https://scontent.fdet1-1.fna.fbcdn.net/v/t1.6435-9/73388333_143073947051486_4577829912219484160_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=N9tCYXDrXdIAX_iLjnf&_nc_ht=scontent.fdet1-1.fna&oh=00_AT_t-uvNUDYOQEa8akoqrV1Pjd78B3k9n42CXiTrAqQmDQ&oe=6263F9C6" alt="">
     </div>
@@ -122,24 +119,24 @@ h3{
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <script>
+      var yes = false;
+      let w = $('#width');
+      let l = $('#length');
       let f1 = $('#hiddenDiv');
       let f2 = $('#hiddenDiv2');
+      let clr1 = $('#color1');
       f1.hide();
-      var yes = false;
+      clr1.css("color", "lime");
+      
       function btnClick(){
         yes = true;
         f1.show();
         f2.slideUp();
+        clr1.css("color", "red");
       }
-      let w = $('#width');
-      let l = $('#length');
-      let swl = $('#swl');
-      function btnKnown(){
-        btnClick();
-        l.hide();
-        w.hide();
-        swl.show();
-      }
+      
+    
+      
     </script>
 </body>
   <footer>
