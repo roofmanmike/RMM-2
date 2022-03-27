@@ -69,8 +69,7 @@ if (height >= 1) {
   height = ob.format(height);
   res.write('<h1>' + num5 + ' story hazard: <span style="color:green">$</span>' + height + '</h1>');
 }
-
-res.write('<h1 style="text-decoration:underline">Total: <span style="color:green">$</span>' + '<span style="color:red">' + result + '.00' + '</span></h1>');
+res.write('<h1 style="text-decoration:underline">Total: <span style="color:green">$</span>' + '<span style="color:red">' + result + '</span></h1>');
 res.write('</body>' + '<footer>');
 res.write('<h3>Confirm this price and schedule your new roof with a core test~</h3>');
 res.write('<h1><a href="tel:248-678-7663">(248)678-ROOF</a></h1>');
