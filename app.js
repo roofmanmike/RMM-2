@@ -27,23 +27,19 @@ if(mm<10)
 } 
 today = `${mm}-${dd}-${yyyy}`;
 
-
-
 var num1 = Number(req.body.num1);
 var num2 = Number(req.body.num2);
 var num3 = Number(req.body.num3);
 var num4 = Number(req.body.num4);
 var num5 = Number(req.body.num5);
 var uka = Number(req.body.userKnownArea);
-var user = uka;
+
 var height = num5;
 var area = num1 * num2 * 5.5;
 var squares = num1 * num2;
 var gutter = num3 * 15;
 var coping = num4 * 12;
-if (user>1){
-  console.log(user);
-}
+
 if (num5 > 2){
   height = height * 1000;
 }
