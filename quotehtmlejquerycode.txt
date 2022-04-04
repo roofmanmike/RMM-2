@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style media="screen">
+      footer{
+        background-color: black;
+        text-align: center;
+        height: 100%;
+      }
+      p{
+        color:white;
+      }
+    </style>
+    <meta charset="utf-8">
+    <title>Quote TPO</title>
+  </head>
+  <body style="background-color:grey">
+    <div class="container" id="demo1">
+
+    <h1 id="demo"><a href="tel:248-678-7663" style="color:orange">Lock it in CALL NOW!</a></h1>
+    <h4 style = "color:white">Enter Dimensions or Total Sq Ft</h4>
+    <p style="color:white">Schedule a core test and formal quote</p>
+
+    <form>
+      Length:<br> <input type="number" name="a" id="a"><br>
+      Width: <br><input type="number" name="b" id="b"><br>
+      Height in stories:<br><input type="number" name="c" id="c"><br>
+
+      Total Sq Ft:<br><input type="number" class="d" name="d" id="d"><br>
+      <br><button type="button" onclick="getArea()">GETSUM</button><br>
+      Recover Cost:<br><input type="number" name="e" id="e"><br>
+      R & R Cost:<br><input type="number" name="f" id="f"><br><br>
+      <hr>
+      <a style="color:lime" href="index.html">Home</a>
+
+
+    </form>
+  </div>
+<br>
+<br>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ 
+<script type="text/javascript">
+  $(document).ready(function(){
+  $("body").css("text-align", "center");
+  $('#demo').slideUp();
+  $("h1").css("color", "blue");
+  $("form").css("color", "white");
+  $('input').css("background-color", "gainsboro");
+  $('input').css("border-radius", "10px");
+  $('button').css("border-radius", "10px");
+
+
+  });
+  $("button").on("click",function() {
+    $("h1").slideToggle();
+  });
+  function getArea(a, b, c, d, sqft) {
+    a = $('#a').val(); //length
+    b = $('#b').val(); //width
+    c = $('#c').val(); //height hazard
+    d = $('#d').val(); //total if known
+    var sqft = a * b;
+    // sq ft
+    var c1 = 0;
+    if (c > 2) {
+      c1 = c * 1000;
+    };
+
+  if (d > 0) {
+    sqft = d;
+  };
+    var recover = sqft * 5 + c1;
+    var rnr = sqft * 9 + c1;
+    // display ttl ft inside text boxes
+    document.getElementById('d').value = sqft;
+    document.getElementById('e').value = recover;
+    document.getElementById('f').value = rnr;
+  };
+
+</script>
+
+  <footer>
+
+<p>Terminations, watershed and additional costs coming soon!</p>
+<p>Schedule a core test and formal quote or just a repair</p>
+<p>Click the top link or call here:</p>
+<a href="tel:248-678-7663" class="glow">(248)678-ROOF</a>
+
+
+  </footer>
+</body>
+</html>
