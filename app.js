@@ -37,7 +37,7 @@ var uka = Number(req.body.userKnownArea);
 var height = num5;
 var area = num1 * num2 * 5.5;
 var squares = num1 * num2;
-var gutter = num3 * 15;
+var gutter = num3 * 21;
 var coping = num4 * 12;
 
 if (num5 > 2){
