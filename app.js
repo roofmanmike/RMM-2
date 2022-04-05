@@ -8,7 +8,7 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get("/", function(req, res){
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile(__dirname + "/index2.html");
 });
 app.post("/", function(req, res){
   let today = new Date();
@@ -38,6 +38,7 @@ var height = num5;
 var area = num1 * num2 * 5.5;
 var squares = num1 * num2;
 var gutter = num3 * 21;
+
 var coping = num4 * 12;
 
 if (num5 > 2){

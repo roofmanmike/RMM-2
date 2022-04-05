@@ -53,7 +53,7 @@
       }
      
       label{
-        color: rgb(10, 107, 62);
+        color: white;
       }
       .navStyle{
         background-color: grey;
@@ -115,17 +115,47 @@ form{
       <button type="button" id="btnTest"name="btnTest"onclick="btnClick()"><b>Open Form</b></button>
     </div>
 <div id="hiddenDiv">
-    <p>Enter the run-off (gutter or drain side) as WIDTH first</p>
-    <p> Include the walls up and over 6" to the next foot</b></p>
+    
+    
     <form action="/" method="post" id="form1">
+        
 
-        <label for="num2"><button type="button" id="btn00">ENTER</button><br></label>
-      <input type="number" id="width" name="num2" placeholder="*WIDTH"><button type="button" id="btnNo">button</button><br><br>
+        <div id="contWidth">
+            <h1></h1>
+            <p>Enter the run-off (gutter or drain side) as WIDTH first</p>
+            <p> Include the walls up and over 6" to the next foot</b></p>
+      <label for="num2">Width</label>
+      
+      <input type="number" id="width" name="num2" placeholder="*WIDTH"><br><br>
+      <label for="btnNo">Is there gutter?</label>
+      <button type="button" id="btnYes">YES</button>
+      <button type="button" id="btnLen">NO</button><br>
 
+            </div>
+
+            
+            <div id="contLength">
+                <h1>Length from watershed run-off to peak</h1>
+                <p>(Gutter or eave to the Top or highest point)</p>
       <input type="number" id="length" name="num1" placeholder="*LENGTH"><br><br>
+      <button type="button" id="btnNo">ENTER</button><br>
+
+                </div>
+                <div id="contGutter">
       <input type="number" id="gutterHide" name="num3" placeholder="GUTTER LENGTH"><br><br>
+                    </div>
+                    <div id="contCoping">
+      <h1>Is there coping?</h1>
       <input type="number" id="copingHide" name="num4" placeholder="COPING LENGTH"><br><br>
+
+      <button type="button" id="btnYes2">YES</button>
+      <button type="button" id="btnNo2">NO</button><br>
+
+                        </div>
+                        <div id="contHeight">
+                            <h1>How high is the building?</h1><br>
       <input type="number" id="num5" name="num5" placeholder="HEIGHT IN STORIES"><br><br>
+      </div>
       <button type="submit" id="enter" onclick="btnClick()" name="submit">ENTER</button><br>
     </form>
     <br>
@@ -162,33 +192,64 @@ form{
       let cope = $('#copingHide');
       let high = $('#num5');
       let enter =$('#enter');
+    //   $('#contWidth').hide();
+      $('#contLength').hide();
+      $('#contGutter').hide();
+      $('#contCoping').hide();
+      $('#contHeight').hide();
+      $('#enter').hide();
       f1.hide();
-      len.hide();
-      gtr.hide();
-      cope.hide();
-      high.hide();
-      enter.hide();
+    //   len.hide();
+    //   gtr.hide();
+    //   cope.hide();
+    //   high.hide();
+    //   enter.hide();
 
       
       clr1.css("color", "red");
       
       function btnClick(){
-        yes = true;
+        
         f1.show();
         f2.slideUp();
         f3.slideUp();
-        clr1.css("color", "red");
-        
-      }
-      $("#btnNo").click(function(){
 
+    }
 
-        $('#btn00').hide();
-        $('#btnNo').hide();
+      $("#btnYes").click(function(){
+        
+        let pass =$('#width').val();
+        $('#btnLen').click();
+        $("#gutterHide").val(pass);
+        let newVal = $("#gutterHide").val();
 
-        
-        
     });
+
+      $("#btnLen").click(function(){
+        $('#contWidth').slideUp();
+        $('#btnYes').hide();
+        $('#btnLen').hide();
+        $('#contLength').show();
+
+    });
+      $("#btnNo").click(function(){
+        $('#contWidth').slideUp();
+        $('#btnYes').hide();
+        $('#btnNo').hide();
+        $('#contLength').slideUp();
+        $('#contCoping').show();  
+
+    });
+    $("#btnYes2").click(function(){
+        $('#btnNo2').click(); 
+    });
+
+    $("#btnNo2").click(function(){
+        $('#contCoping').slideUp();
+        $('#contHeight').show();  
+        $('#enter').show();  
+    });
+
     
       
     </script>
