@@ -8,11 +8,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <style>
       body{
-        background-color: gainsboro;
+
         /* background-image: url('https://scontent.fdet1-2.fna.fbcdn.net/v/t1.6435-9/67914370_107191823973032_2200838901436776448_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=8zNpa-6WwQgAX9b2qEv&_nc_ht=scontent.fdet1-2.fna&oh=00_AT8W3kMikwWoy6kO9G2-67KTwNDetS7ai_6q5A043oRfhw&oe=62645872'); */
         text-align: center;
         padding: 0%;
-
+        background-color: black;
       }
       footer{
         height: 10rem;
@@ -43,8 +43,8 @@
         color: rgb(12, 16, 240);
       }
       button{
-        color: red;
-        background-color:rgb(255, 179, 14);
+        color: blue;
+        background-color: lime;
         border-radius: 7px;
       }
       .fontUp{
@@ -87,7 +87,7 @@ h3{
   color: rgb(12, 16, 240);
 }
 form{
-  background-color: cadetblue;
+  background-color: black;
 
   
   border-style:outset;
@@ -98,10 +98,12 @@ form{
   border-radius: 15%;
 }
 .card{
-  background-color: gainsboro;
+  background-color: rgb(175, 9, 9);
 }
 .card-body{
-  background-color: gainsboro;
+  background-color: black;
+  padding: 10px;
+  margin: 10px;
 }
 
 
@@ -153,7 +155,7 @@ form{
             <img src="https://scontent.fdet1-2.fna.fbcdn.net/v/t1.6435-9/78600997_159861908706023_5328060432819159040_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=VnoEnZRI1gkAX_H8kz-&_nc_ht=scontent.fdet1-2.fna&oh=00_AT-ADRCRPsSA0YX8jw0QPmgj7rAkBFMjNnlH8GMOLf9L7g&oe=62723967" alt="">
             <p> Include the walls up and over 6" to the next foot</b></p>
       <label for="num2">Width</label>
-      <input type="number" id="width" name="num2" placeholder="*WIDTH"><br><br>
+      <input type="number" id="width" name="num2" class="container-fluid" placeholder="*WIDTH"><br><br>
       <label for="btnNo">Is there gutter?</label>
       <button type="button" id="btnYes">YES</button>
       <button type="button" id="btnLen">NO</button><br>
@@ -164,12 +166,12 @@ form{
             <div id="contLength">
                 <h1>Length from watershed run-off to peak</h1>
               <img src="https://scontent.fdet1-1.fna.fbcdn.net/v/t1.6435-9/75635964_145568263468721_30803398072729600_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=b_SAdYgiC4IAX9duYHy&_nc_ht=scontent.fdet1-1.fna&oh=00_AT9_CZ_eY3VOXI8wWiUL8vzZsnWli2uy8BVjNNTFnlLqMw&oe=6274B47E" alt=""><br><br>
-                <input type="number" id="length" name="num1" placeholder="*LENGTH"><br><br>
+                <input type="number" id="length" name="num1" class="container-fluid" placeholder="*LENGTH"><br><br>
       <button type="button" id="btnNo">ENTER</button><br>
 
                 </div>
                 <div id="contGutter">
-      <input type="number" id="gutterHide" name="num3" placeholder="GUTTER LENGTH"><br><br>
+      <input type="number" id="gutterHide" name="num3" class="container-fluid" placeholder="GUTTER LENGTH"><br><br>
                     </div>
                     <div id="contCoping">
 
@@ -177,7 +179,7 @@ form{
       <div class="card-header container-fluid">
         <img src="https://scontent.fdet1-1.fna.fbcdn.net/v/t1.6435-9/73388333_143073947051486_4577829912219484160_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=N9tCYXDrXdIAX_iLjnf&_nc_ht=scontent.fdet1-1.fna&oh=00_AT_t-uvNUDYOQEa8akoqrV1Pjd78B3k9n42CXiTrAqQmDQ&oe=6263F9C6" alt="">
       </div><br>
-      <input type="number" id="copingHide" name="num4" placeholder="COPING LENGTH"><br><br>
+      <input type="number" id="copingHide" name="num4" class="container-fluid" placeholder="COPING LENGTH"><br><br>
 
       <button type="button" id="btnYes2">YES</button>
       <button type="button" id="btnNo2">NO</button><br>
@@ -186,7 +188,7 @@ form{
                         <div id="contHeight">
                             <h1>How high is the building?</h1><br>
                             <img src="https://scontent.fdet1-1.fna.fbcdn.net/v/t1.6435-9/67644514_101052141253667_5187634089074622464_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=e3f864&_nc_ohc=n-kKtaMluaQAX-T8CM1&_nc_ht=scontent.fdet1-1.fna&oh=00_AT94SqRGktEPPJtIuLTwqb30KXKTZHl65WoaQm7g5PvtVQ&oe=62747D98" alt=""><br><br>
-      <input type="number" id="num5" name="num5" placeholder="HEIGHT IN STORIES"><br><br>
+      <input type="number" id="num5" name="num5" class="container-fluid" placeholder="HEIGHT IN STORIES"><br><br>
       </div>
       <button type="submit" id="enter" onclick="btnClick()" name="submit">ENTER</button><br>
     </form>
