@@ -74,7 +74,7 @@ res.write('</body>' + '<footer>');
 res.write('<h3>Confirm this price and schedule your new roof with a core test~</h3>');
 res.write('<h1><a href="tel:248-678-7663">(248)678-ROOF</a></h1>');
 res.write('<h1>Web and App Development by <a href="https://www.roofmanmike.com">RoofManMike&copy</a></h1></footer>');
-res.write('<img src="https://scontent.fdet1-1.fna.fbcdn.net/v/t1.6435-9/84529215_186569052701975_5290288394474094592_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=vPqTBcHaZScAX94IYA1&tn=qoRfCO6XpFfZfRaY&_nc_ht=scontent.fdet1-1.fna&oh=00_AT9Pj4ekYfC_TTxoKOz_BFpIUn5_FcAh1TdENfld7YcSCQ&oe=626C7F09">');
+res.write('<img src="https://scontent.fdet1-1.fna.fbcdn.net/v/t1.6435-9/74634680_145568873468660_1633695294703009792_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=DDrxN9mAx_YAX_zWiA7&_nc_ht=scontent.fdet1-1.fna&oh=00_AT-cV634psUtaGfeNXYkHkuG4hZS8fhucxiKucP5AZC3tw&oe=6274AE19">');
 res.send();
 })
 

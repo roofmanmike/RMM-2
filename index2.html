@@ -103,7 +103,7 @@ form{
   border-radius: 15%;
 }
 .card{
-  background-color: rgb(175, 9, 9);
+  background-color: rgb(5, 87, 89);
 }
 .card-body{
   background-color: black;
@@ -145,7 +145,7 @@ form{
       <p>-If you're on your own:</p>
       <p>-Add 10% for waste, 5% for curbs and miscellaneous flashing</p>
       <p>-Subtract wall areas for insulation takeoff</p>
-      <h4 style="color:rgb(204, 17, 17)"><a href="https://www.roofmanmike.com"><b>RoofManMike&trade;</b></a></h4><br>
+      <h4 style="color:rgb(204, 17, 17)">Since 1992 <a href="https://www.roofmanmike.com"><b>RoofManMike&trade;</b></a></h4><br>
 
       
       <button type="button" id="btnTest"name="btnTest"onclick="btnClick()"><b>Open Form</b></button>
@@ -233,6 +233,7 @@ form{
       let cope = $('#copingHide');
       let high = $('#num5');
       let enter =$('#enter');
+      let head1 = $('#hh1');
     //   $('#contWidth').hide();
       $('#contLength').hide();
       $('#contGutter').hide();
@@ -249,6 +250,7 @@ form{
       clr1.css("color", "red");
       
       function btnClick(){
+        head1.text("Watershed");
         f1.fadeIn();
         f2.fadeOut();
         f3.fadeOut();
@@ -265,6 +267,8 @@ form{
         $('#btnYes').hide();
         $('#btnLen').hide();
         $('#contLength').fadeIn();
+        head1.text("Length");
+
 
     });
       $("#btnNo").click(function(){
@@ -273,6 +277,8 @@ form{
         $('#btnNo').hide();
         $('#contLength').fadeOut();
         $('#contCoping').fadeIn();  
+        head1.text("Coping");
+
 
     });
     $("#btnYes2").click(function(){
@@ -282,7 +288,9 @@ form{
     $("#btnNo2").click(function(){
         $('#contCoping').slideUp();
         $('#contHeight').show();  
-        $('#enter').show();  
+        $('#enter').show(); 
+        head1.text("Height");
+ 
     });
 
     
