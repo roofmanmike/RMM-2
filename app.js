@@ -33,13 +33,15 @@ var num3 = Number(req.body.num3);
 var num4 = Number(req.body.num4);
 var num5 = Number(req.body.num5);
 var uka = Number(req.body.userKnownArea);
+var drains = Number(req.body.dr1);
 
 var height = num5;
 var area = num1 * num2 * 5.5;
 var squares = num1 * num2;
 var gutter = num3 * 21;
-
+var drainCount = drains * 750;
 var coping = num4 * 12;
+
 
 if (num5 > 2){
   height = height * 1000;
@@ -51,6 +53,7 @@ let ob = new Intl.NumberFormat('en-US');
 squares = ob.format(squares);
 area = ob.format(area);
 result = ob.format(result);
+drainCount = ob.format(drainCount);
 res.write('<head><style>body{background-color:darkgrey; text-align:center;}hr{background-color:red;}</style></head>');
 res.write('<h1>Valid thru 30 days from: ' + today + ': </h1>');
 res.write('<h1>' + squares + ' sq ft</h1>');
@@ -60,6 +63,9 @@ res.write('<h1>Before termination(s) and watershed: <span style="color:green">$<
 if (gutter >= 1) {
   gutter = ob.format(gutter);
   res.write('<h1>Gutters: <span style="color:green">$</span>' + gutter + '</h1>');  
+}
+if (drains > 0){
+  res.write('<h1>Detail for ' + drains + ' sumps: <span style="color:green">$</span>' + drainCount);
 }
 if (coping >= 1) {
   coping = ob.format(coping);

@@ -103,7 +103,7 @@ form{
   border-radius: 15%;
 }
 .card{
-  background-color: rgb(5, 87, 89);
+  background-color: hsl(181, 89%, 18%);
 }
 .card-body{
   background-color: black;
@@ -113,7 +113,10 @@ form{
 #hh1{
   color: white;
 }
+hr {
+  background-color: lime;
 
+}
     </style>
   </head>
   <div class="container-fluid">
@@ -135,9 +138,12 @@ form{
       <hr>
       <p>-1/4" Mechanically fastened, low profile areas off limits to public:</p>
       <img src="https://scontent.fdet1-1.fna.fbcdn.net/v/t1.6435-9/79123130_159864495372431_1503319573863071744_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=gwJSsnKUuzwAX9s4rhe&_nc_ht=scontent.fdet1-1.fna&oh=00_AT_raTl7aeDPSTMbH3TosWbUwV5RUNMv-Cvw7AJJvDJ-_A&oe=62745EC6" alt=""><br>
+      <br>
       <hr>
+      <br>
       <p>-1/2" Fully adhered, additional insulation fasteners as per specs</p>
       <img src="https://scontent.fdet1-1.fna.fbcdn.net/v/t1.6435-9/84529215_186569052701975_5290288394474094592_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=vPqTBcHaZScAX94IYA1&tn=qoRfCO6XpFfZfRaY&_nc_ht=scontent.fdet1-1.fna&oh=00_AT9Pj4ekYfC_TTxoKOz_BFpIUn5_FcAh1TdENfld7YcSCQ&oe=626C7F09" alt="">
+      <br>
       <hr>
       <p>-20 Year, Maintenance Free, Reflective and Reinforced .060mil TPO</p>
       <p>-Colored, galvanized, cleated compression fascia/coping</p>
@@ -169,7 +175,19 @@ form{
 
             </div>
 
-            
+            <div id="contDrain">
+              <p>How many Drain Sumps?</p>
+              <p>3" to 4" are standard</p>
+                <img src="https://scontent.fdet1-2.fna.fbcdn.net/v/t1.6435-9/78600997_159861908706023_5328060432819159040_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=VnoEnZRI1gkAX_H8kz-&_nc_ht=scontent.fdet1-2.fna&oh=00_AT-ADRCRPsSA0YX8jw0QPmgj7rAkBFMjNnlH8GMOLf9L7g&oe=62723967" alt="">
+              <br><br>
+                <label for="dr1">Drains</label>
+          <input type="number" id="drains" name="dr1" class="container-fluid" placeholder="How Many Drains?"><br><br>
+          <button type="button" id="drainYes">YES</button>
+          <button type="button" id="drainNo">NO</button><br>
+    
+                </div>
+
+
             <div id="contLength">
                 <h1>Length from watershed run-off to peak</h1>
               <img src="https://scontent.fdet1-1.fna.fbcdn.net/v/t1.6435-9/75635964_145568263468721_30803398072729600_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=b_SAdYgiC4IAX9duYHy&_nc_ht=scontent.fdet1-1.fna&oh=00_AT9_CZ_eY3VOXI8wWiUL8vzZsnWli2uy8BVjNNTFnlLqMw&oe=6274B47E" alt=""><br><br>
@@ -235,6 +253,7 @@ form{
       let enter =$('#enter');
       let head1 = $('#hh1');
     //   $('#contWidth').hide();
+    $('#contDrain').hide();
       $('#contLength').hide();
       $('#contGutter').hide();
       $('#contCoping').hide();
@@ -266,9 +285,21 @@ form{
         $('#contWidth').fadeOut();
         $('#btnYes').hide();
         $('#btnLen').hide();
+        $('#contDrain').show();
+        // $('#contLength').fadeIn();
+        // head1.text("Length");
+      $('#drainNo').click(function(){
+
+        $('#drainYes').slideUp();
+        $('#drainNo').slideUp();
+
+        $('#contDrain').slideUp();
         $('#contLength').fadeIn();
         head1.text("Length");
-
+      })
+      $('#drainYes').click(function(){
+        $('#drainNo').click();
+      })
 
     });
       $("#btnNo").click(function(){
