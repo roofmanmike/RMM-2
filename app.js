@@ -32,11 +32,12 @@ var num2 = Number(req.body.num2);
 var num3 = Number(req.body.num3);
 var num4 = Number(req.body.num4);
 var num5 = Number(req.body.num5);
-var uka = Number(req.body.userKnownArea);
+
 var drains = Number(req.body.dr1);
 
 var height = num5;
 var area = num1 * num2 * 5.5;
+
 var squares = num1 * num2;
 var gutter = num3 * 21;
 var drainCount = drains * 750;
