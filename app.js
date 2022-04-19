@@ -8,7 +8,7 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get("/", function(req, res){
-  res.sendFile(__dirname + "/index2.html");
+  res.sendFile(__dirname + "/new_index.html");
 });
 app.post("/", function(req, res){
   let today = new Date();
