@@ -66,6 +66,9 @@
     width: 90%;
   }
 }
+li{
+  color: white;
+}
       .wrap{
         height: 50%;
         width: 50%;
@@ -113,7 +116,6 @@ hr {
   <body>
     <div class="fontUp container-fluid">
 
-      
       <hr>
       <h1 id="hh1"><b>Current Market TPO System Online Quote</h1>
         <hr>   
@@ -147,20 +149,96 @@ hr {
      
       <h4 style="color:rgb(204, 17, 17)">Since 1992 <a href="https://www.roofmanmike.com"><b>RoofManMike&trade;</b></a></h4><br>
       <button type="button" id="btnTest"name="btnTest"onclick="btnClick()"><b>Open Form</b></button><br><br>
-      <button type="submit" id="proTakeOff" name="proTakeOff"disabled>ProTakeOff</button><br>
-
+      <button type="submit" id="proTakeOff" name="proTakeOff">ProTakeOff</button><br>
     </div>
     <!--  -->
-
     <div id="tester2">
       <label for="input1">Enter Field Area(s) W x L</label>
       <input type="number" id="fieldWidth" name="fieldWidth" class="container-fluid" placeholder="width"><br><br>
       <input type="number" id="fieldLength" name="fieldLength" class="container-fluid" placeholder="length"><br><br>     
       <label for="btn1">Add more</label>
     <button type="button" id="btn1">ENTER</button> <br><br>
-
     <button type="button" id="btn2">DONE</button> 
   </div> 
+  <div id="tester3">
+      <p>6" on deck to 6" over</p>
+      <p>Rounded to the next foot</p>
+      <label for="wallHeight">Enter Wall Area(s) W x L</label>
+      <input type="number" id="wallHeight" name="wallHeight" class="container-fluid" placeholder="wall height"><br><br>
+      <input type="number" id="wallLength" name="wallLength" class="container-fluid" placeholder="wall length"><br><br>     
+      <label for="btnWall01">Add more</label>
+      <button type="button" id="btnwall01" name="btnwall01">ADD</button> 
+    <button type="button" id="btnwall2" name="btnwall2">DONE</button> 
+  </div> 
+
+  <div id="tester4">
+    <p>Coping</p>
+    <label for="coping">Enter coping feet</label>
+    <input type="number" id="coping" name="coping" class="container-fluid" placeholder="linear feet"><br><br>
+
+    <label for="btnCoping">Add more</label>
+    <button type="button" id="btnCoping" name="btnCpoing">ADD</button> 
+  <button type="button" id="btnCoping2" name="btnCpoing2">DONE</button> 
+</div> 
+
+<div id="tester5">
+  <p>Replacement or Retrofit</p>
+
+  <label for="btnt5">3"</label>
+  <button type="button" id="btnT5" name="btnT5">REPLACE</button> 
+<button type="button" id="btnT5Done" name="btnT5Done">RETROFIT</button> 
+<hr>
+<label for="btnT6">4"</label>
+<button type="button" id="btnT6" name="btnT6">REPLACE</button> 
+<button type="button" id="btnT6Done" name="btnT6Done">RETROFIT</button> 
+<hr>
+<button type="button" id="btnDrainDone" name="btnDrainDone">DONE</button> 
+
+
+
+</div> 
+
+<div id="tester6">
+  <div id="proGutterLen">
+    <p>Gutter and Accessory</p>
+    <p>Builder</p>
+    <label for="proGutterInput"id="labelDisplay">Gutter Length</label>
+    <input type="number" id="proGutterInput" name="proGutterInput" class="container-fluid" placeholder="*LENGTH"><br><br>
+    <label for="btnProGutterAdd">ADD</label>
+    <button type="button" id="btnProGutterAdd" name="btnProGutterAdd">ENTER</button><br><br>
+    <label for="btnProGutterAdd">DONE</label>
+    <button type="button" id="btnProGutterDone" name="btnProGutterDone">DONE</button> 
+    <hr>
+  </div>
+  <div id="hideDown">
+  <label for="btnProDown" id="labelDisplay2">10' Downspout(s)</label><br>
+  <button type="button" id="btnProDown" name="btnProDown">Add+10'</button> 
+  <button type="button" id="btnProDownDel" name="btnProDownDel">Del-10'</button><br><br> 
+  <button type="button" id="btnProDownDone" name="btnProDownDone">Done</button> 
+</div>
+  <hr>
+  <div id="ends">
+  <label for="btnProEnds1" id="labelDisplay3">End Cap(s)</label><br>
+  <button type="button" id="btnProEndsLeft" name="btnProEndsLeft">+ LEFT</button> 
+  <button type="button" id="btnProEndsRight" name="btnProEndsRight">+ RIGHT</button> <br>
+  <button type="button" id="btnProEndsDelLeft" name="btnProEndsDelLeft">DEL</button> 
+  <button type="button" id="btnProEndsDelRight" name="btnProEndsDelRight">DEL</button> <br>
+  <button type="button" id="btnProEndsDone" name="btnProEndsDone">DONE</button> 
+
+
+</div>
+<div id="hideOut">
+  <hr>
+  <label for="btnProOutlets" id="btnProLabel4" name="btnProLabel4">Outlet(s)</label><br>
+  <button type="button" id="btnProOutlets" name="btnProOutlets">ADD</button> 
+  <button type="button" id="btnProOutletsDel" name="btnProOutlets1">DEL</button><br> 
+  <button type="button" id="btnProOutletsDone" name="btnProOutletsDone">DONE</button> 
+
+</div>
+  <hr>
+
+</div>
+
 
     <!--  -->
 <div id="hiddenDiv">
@@ -210,7 +288,6 @@ hr {
       <input type="number" id="num5" name="num5" class="container-fluid" placeholder="HEIGHT IN STORIES"><br><br>
       </div>
       <button type="submit" id="enter" onclick="btnClick()" name="submit">ENTER</button><br>
-
     </form>
     <br>
     </div>
@@ -241,6 +318,7 @@ hr {
       let enter =$('#enter');
       let head1 = $('#hh1');
       let t2 = $('#tester2');
+      let pgl = $('#proGutterInput');
     $('#contDrain').hide();
       $('#contLength').hide();
       $('#contGutter').hide();
@@ -249,33 +327,254 @@ hr {
       $('#enter').hide();
       f1.hide();
       t2.hide();
-
-      //---------------------------
-      var fieldArray = [];
-      function getWall(){
-    
+      $('#tester3').hide();
+      $('#tester4').hide();
+      $('#tester5').hide();
+      $('#tester6').hide();
+      var fieldArray = ['field'];
+// pro takeoff get field(s)
+      function getField(){
         const fieldHeight = $('#fieldWidth').val();
         const fieldLength = $('#fieldLength').val();
         var ttlField = fieldHeight * fieldLength;
         fieldArray.push(ttlField);
         $('#fieldWidth').val("");
         $('#fieldLength').val("");
-
-        console.log(fieldArray);
       }
+      //open takeoff
       $("#proTakeOff").click(function(){
         t2.show();
+        head1.text("FIELD ONLY")
         f2.hide();
         f3.hide();
       });
+      //get wall(s)
       $("#btn1").click(function(){
-        getWall();
+        getField();
       });
+      //
       $("#btn2").click(function(){
-        getWall();
-        $('#tester2').remove();
+        getField();
+      //got field open walls
+      $('#tester2').remove();
+      head1.text('Wall Flashing');
+      $('#tester3').show();
       });
-      //---------------------------
+      var arrayWall = ["wall"];
+      function wallFig(){
+        const wallHeight = $('#wallHeight').val();
+        const wallLength = $('#wallLength').val();
+        var ttlWall = wallHeight * wallLength;
+        arrayWall.push(ttlWall);
+        $('#wallHeight').val("");
+        $('#wallLength').val("");
+        console.log(arrayWall);
+      }
+      $("#btnwall01").click(function(){
+        wallFig();
+      });
+      $("#btnwall2").click(function(){
+        wallFig();
+        $('#tester3').hide();
+        $('#tester4').show();
+      });
+      //coping add
+      var arrayCoping = ['coping'];
+      function btnCope(){
+        const coping = $('#coping').val();
+        var copingTtl = coping;
+        if (coping == 0) {
+          copingTtl = 0;
+        }
+        arrayCoping.push(copingTtl);
+        $('#coping').val("");
+        console.log(arrayCoping);
+      }
+      $("#btnCoping").click(function(){
+        btnCope();
+      });
+      //coping done
+      $("#btnCoping2").click(function(){
+        btnCope();
+        $('#tester4').hide();
+        $('#tester5').show();
+      });
+      //drain replace 3"
+      const arrayDrains = ['3-inch'];
+      $("#btnT5").click(function(){
+        arrayDrains.push('new');
+        console.log(arrayDrains);
+        head1.text(arrayDrains);
+      });
+      // drain retro 3"
+      $("#btnT5Done").click(function(){
+        arrayDrains.push('retro');
+        console.log(arrayDrains);
+        head1.text(arrayDrains);
+     });
+      //drain replace 4"
+      const arrayT4 = ['4-inch']
+      $("#btnT6").click(function(){
+        arrayT4.push('new');
+        console.log(arrayT4);
+        head1.text(arrayT4);
+      });
+      //drain retro 4"
+      $("#btnT6Done").click(function(){
+        arrayT4.push('retro');
+        console.log(arrayT4);
+        head1.text(arrayT4);
+      });
+      $("#btnDrainDone").click(function(){
+        $('#tester5').hide();
+        $('#tester6').show();
+      });
+      const tally = [];
+      const arrayGutter = [];
+      const arrayDown = [];
+      const arrayEnds = ['ends'];
+      const arrayOutlets = ['outlets'];
+      //pro button gutter ADD
+      $("#btnProGutterAdd").click(function(){
+        //get input val
+        var gutterLen = pgl.val();
+        if (gutterLen == 0) {
+          gutterLen = 0;
+        }
+        arrayGutter.push(gutterLen);
+        console.log(arrayGutter);
+
+        pgl.val("");
+
+        $('#labelDisplay').text('Lengths: ' + arrayGutter);
+      });
+      const options = [];
+      let sum = 0;
+      let prototype = [];
+      $("#btnProGutterDone").click(function(){
+        $('#proGutterLen').slideUp();
+        var gutterLen = pgl.val();
+        if (gutterLen == 0) {
+          gutterLen = 0;
+        }
+        if (gutterLen != 0) {
+          arrayGutter.push(gutterLen);
+        }
+        for (let index = 0; index < arrayGutter.length; index++) {
+            const element = arrayGutter[index];
+            elemental = parseInt(element);
+            sum += elemental;
+          }
+        var gutterMessage = "Total feet: " + sum;
+        var gutterLengths = "Lengths: " + arrayGutter;
+
+        
+        $('#footerMessage').before("<h1>" + gutterMessage + "</h1>");
+        $('#footerMessage').text(gutterLengths);
+
+      });
+      //downspout add
+      var downMessage = '';
+      const options2 =[];
+      $("#btnProDown").click(function(){
+        var down = 1;
+        var downFeet = 10;
+        arrayDown.push(down);
+        sum1 = 0;
+        for (let index = 0; index < arrayDown.length; index++) {
+          const element = arrayDown[index];
+          sum1 += parseInt(element);
+        }
+        downMessage = "10' downspouts: " + sum1;
+        options2.push(downMessage);
+        $('#labelDisplay2').text(downMessage);
+      });
+
+      $("#btnProDownDel").click(function(){
+        arrayDown.pop();
+        sum2 = 0;
+        for (let index = 0; index < arrayDown.length; index++) {
+          const element = arrayDown[index];
+          sum2 += parseInt(element);
+        }
+        downMessage = "10' downspouts: " + sum2;
+
+
+        $('#labelDisplay2').text(downMessage);
+
+      });
+
+
+      $("#btnProDownDone").click(function(){
+        var downs = $('#labelDisplay2').text();
+        $('#hideDown').hide();
+    
+        $('#footerMessage').after("<h1>" + downMessage + "</h1>");
+    
+        
+      });
+
+      let leftEnd = 0;
+      let rightEnd = 0;
+
+      
+      $("#btnProEndsLeft").click(function(){
+        arrayEnds.push('left');
+        leftEnd += 1;
+        $('#btnProEndsLeft').text(leftEnd + " Left");
+        $('#footerEndsLeft').text("Left Ends: " + leftEnd);
+
+        
+        console.log(arrayEnds);
+      });
+      $("#btnProEndsRight").click(function(){
+        arrayEnds.push('right');
+        rightEnd += 1;
+        $('#btnProEndsRight').text(rightEnd + " Right");
+        $('#footerEndsRight').text("Right Ends: " + rightEnd);
+      });
+      $("#btnProEndsDelRight").click(function(){
+        rightEnd -= 1;
+        $('#btnProEndsRight').text(rightEnd + " Right");
+        $('#footerEndsRight').text("Right Ends: " + rightEnd);
+      });
+      $("#btnProEndsDelLeft").click(function(){
+        leftEnd -= 1;
+        $('#btnProEndsLeft').text(leftEnd + " Left");
+        $('#footerEndsLeft').text("Left Ends: " + leftEnd);
+      });
+      $("#btnProEndsDone").click(function(){
+        $('#ends').hide();
+      });
+      var outletCount = 0;
+      $("#btnProOutlets").click(function(){
+        arrayOutlets.push('1');
+        outletCount += 1;
+        var outletMessage = outletCount + " Outlet(s)";
+
+        $('#btnProLabel4').text(outletMessage);
+        $('#footerOutlets').text("Outlets: " + outletCount);
+
+        console.log(arrayOutlets);
+      });
+      $("#btnProOutletsDone").click(function(){
+        $('#hideOut').hide();
+        
+      });
+      $("#btnProOutletsDel").click(function(){
+        arrayOutlets.pop();
+        outletCount -= 1;
+        var outletMessage = outletCount + " Outlet(s)";
+        $('#btnProLabel4').text(outletMessage);
+        console.log(arrayOutlets);
+      });
+      
+      
+
+
+
+//-----------------------------------------------
+      //-----------------------------------------
     // customer quote side logic-----------------
       clr1.css("color", "red");
       // first button first hidden div shown
@@ -334,6 +633,16 @@ hr {
 </body>
   <footer>
     <br><br>
+    <h1 style="color:white"id="footerMessage"></h1>
+    
+    <h1 id="footerEndsLeft" name="footerEndsLeft"></h1>
+    
+    <h1 id="footerEndsRight" name="footerEndsRight"></h1>
+
+    <h1 id="footerOutlets" name="footerOutlets"></h1>
+
+    <br><br>
+    
     <h1><b><a id="footerH1" href="tel:248-678-7663">(248)678-ROOF</a></b></h1>
   </footer>
 </html>
