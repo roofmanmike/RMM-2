@@ -331,15 +331,26 @@ hr {
       $('#tester4').hide();
       $('#tester5').hide();
       $('#tester6').hide();
-      var fieldArray = ['field'];
+      var fieldArray = [];
 // pro takeoff get field(s)
       function getField(){
-        const fieldHeight = $('#fieldWidth').val();
+        const fieldWidth = $('#fieldWidth').val();
         const fieldLength = $('#fieldLength').val();
-        var ttlField = fieldHeight * fieldLength;
+        var ttlField = fieldWidth * fieldLength;
         fieldArray.push(ttlField);
+        let fieldSum = 0;
+        for (let index = 0; index < fieldArray.length; index++) {
+          const element = parseInt(fieldArray[index]);
+          fieldSum += element;
+          let fieldWaste = Math.round(fieldSum * .10);
+          fieldSum += fieldWaste;
+          console.log(Math.round(fieldWaste));
+        }
         $('#fieldWidth').val("");
         $('#fieldLength').val("");
+        $('#footerMembrane').text("Field Area(s):  " + fieldArray);
+        $('#footerMembrane2').text("Field Total + waste:  " + fieldSum);
+
       }
       //open takeoff
       $("#proTakeOff").click(function(){
@@ -348,7 +359,7 @@ hr {
         f2.hide();
         f3.hide();
       });
-      //get wall(s)
+      //get field
       $("#btn1").click(function(){
         getField();
       });
@@ -356,20 +367,38 @@ hr {
       $("#btn2").click(function(){
         getField();
       //got field open walls
-      $('#tester2').remove();
+      $('#tester2').hide();
       head1.text('Wall Flashing');
       $('#tester3').show();
       });
-      var arrayWall = ["wall"];
+      //function wall figure
+      var arrayWall = [];
       function wallFig(){
         const wallHeight = $('#wallHeight').val();
         const wallLength = $('#wallLength').val();
         var ttlWall = wallHeight * wallLength;
         arrayWall.push(ttlWall);
+        sumWall = 0;
+        for (let index = 0; index < arrayWall.length; index++) {
+          const element = parseInt(arrayWall[index]);
+          sumWall += element;
+          let wallWaste = element * .10;
+          console.log(wallWaste);
+          sumWall += wallWaste;
+          let wallMessage2 = "Wall total + waste: " + sumWall;
+          $('#footerWallText').text(wallMessage2);
+        }
+        if (arrayWall[arrayWall.length - 1] === 0) {
+          arrayWall.pop();
+        } 
+        let wallMessage = "Walls: " + arrayWall;
         $('#wallHeight').val("");
         $('#wallLength').val("");
+        $('#footerMembraneFlashing').text(wallMessage);
         console.log(arrayWall);
       }
+//---------------------------------------
+//add more wall
       $("#btnwall01").click(function(){
         wallFig();
       });
@@ -379,16 +408,33 @@ hr {
         $('#tester4').show();
       });
       //coping add
-      var arrayCoping = ['coping'];
+      var arrayCoping = [];
+      var copeCounter = 0;
+
       function btnCope(){
+        
         const coping = $('#coping').val();
         var copingTtl = coping;
         if (coping == 0) {
           copingTtl = 0;
         }
         arrayCoping.push(copingTtl);
+        let copingFeet = 0;
+        let splicePlates = 0;
+        for (let index = 0; index < arrayCoping.length; index++) {
+          const element = parseInt(arrayCoping[index]);
+          copingFeet += element;
+          var sp = Math.round(copingFeet / 10);
+          splicePlates = Math.round(sp / 2);
+          var pcs = splicePlates * 20;
+        }
         $('#coping').val("");
+        console.log(copingFeet);
         console.log(arrayCoping);
+        $('#footerCoping').text(copingFeet + " ft coping");
+        $('#footerCoping2').text(sp + " pcs");
+        $('#footerCoping3').text("and cleat");
+        $('#splicePlates').text(splicePlates + " splice plates");
       }
       $("#btnCoping").click(function(){
         btnCope();
@@ -443,9 +489,7 @@ hr {
         }
         arrayGutter.push(gutterLen);
         console.log(arrayGutter);
-
         pgl.val("");
-
         $('#labelDisplay').text('Lengths: ' + arrayGutter);
       });
       const options = [];
@@ -467,11 +511,8 @@ hr {
           }
         var gutterMessage = "Total feet: " + sum;
         var gutterLengths = "Lengths: " + arrayGutter;
-
-        
         $('#footerMessage').before("<h1>" + gutterMessage + "</h1>");
         $('#footerMessage').text(gutterLengths);
-
       });
       //downspout add
       var downMessage = '';
@@ -489,7 +530,6 @@ hr {
         options2.push(downMessage);
         $('#labelDisplay2').text(downMessage);
       });
-
       $("#btnProDownDel").click(function(){
         arrayDown.pop();
         sum2 = 0;
@@ -498,33 +538,20 @@ hr {
           sum2 += parseInt(element);
         }
         downMessage = "10' downspouts: " + sum2;
-
-
         $('#labelDisplay2').text(downMessage);
-
       });
-
-
       $("#btnProDownDone").click(function(){
         var downs = $('#labelDisplay2').text();
         $('#hideDown').hide();
-    
         $('#footerMessage').after("<h1>" + downMessage + "</h1>");
-    
-        
       });
-
       let leftEnd = 0;
       let rightEnd = 0;
-
-      
       $("#btnProEndsLeft").click(function(){
         arrayEnds.push('left');
         leftEnd += 1;
         $('#btnProEndsLeft').text(leftEnd + " Left");
         $('#footerEndsLeft').text("Left Ends: " + leftEnd);
-
-        
         console.log(arrayEnds);
       });
       $("#btnProEndsRight").click(function(){
@@ -633,7 +660,23 @@ hr {
 </body>
   <footer>
     <br><br>
+    <h1 id="footerMembrane" name="footerMembrane"></h1>
+
+    <h1 id="footerMembrane2"></h1>
+
+    <h1 id="footerMembraneFlashing"></h1>
+
+    <h1 id="footerWallText"></h1>
+
     <h1 style="color:white"id="footerMessage"></h1>
+
+    <h1 id="footerCoping"></h1>
+
+    <h1 id="footerCoping2"></h1>
+
+    <h1 id="footerCoping3"></h1>
+
+    <h1 id="splicePlates"></h1>
     
     <h1 id="footerEndsLeft" name="footerEndsLeft"></h1>
     
@@ -641,6 +684,8 @@ hr {
 
     <h1 id="footerOutlets" name="footerOutlets"></h1>
 
+
+    
     <br><br>
     
     <h1><b><a id="footerH1" href="tel:248-678-7663">(248)678-ROOF</a></b></h1>
