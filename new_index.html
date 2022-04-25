@@ -353,8 +353,8 @@ hr {
         }
         $('#fieldWidth').val("");
         $('#fieldLength').val("");
-        $('#footerMembrane').text("Field Area(s):  " + fieldArray);
-        $('#footerMembrane2').text("Field Total + waste:  " + fieldSum);
+        $('#footerMembrane').text("Field(s):  " + fieldArray + 'sqft');
+        $('#footerMembrane2').text("Field + waste:  " + fieldSum + 'sqft');
       }
       //open takeoff
       $("#proTakeOff").click(function(){
@@ -398,7 +398,7 @@ hr {
         let wallMessage = "Walls: " + arrayWall;
         $('#wallHeight').val("");
         $('#wallLength').val("");
-        $('#footerMembraneFlashing').text(wallMessage);
+        $('#footerMembraneFlashing').text(wallMessage + 'sqft');
         console.log(arrayWall);
         head1.text("RoofManMike");
       }
@@ -539,7 +539,7 @@ $("#btnDrop3").click(function(){
             elemental = parseInt(element);
             sum += elemental;
           }
-        var gutterMessage = "Total feet: " + sum;
+        var gutterMessage = "Total gutter: " + sum;
         var gutterLengths = "Lengths: " + arrayGutter;
         $('#footerMessage').before("<h1>" + gutterMessage + "</h1>");
         $('#footerMessage').text(gutterLengths);
@@ -701,6 +701,12 @@ $("#btnDrop3").click(function(){
 <!--  -->
     <h1 style="color:white"id="footerMessage"></h1>
 
+    <h1 id="footerEndsLeft" name="footerEndsLeft"></h1>
+    
+    <h1 id="footerEndsRight" name="footerEndsRight"></h1>
+
+    <h1 id="footerOutlets" name="footerOutlets"></h1>
+
     <h1 id="footerCoping"></h1>
 
     <h1 id="footerCoping2"></h1>
@@ -711,11 +717,7 @@ $("#btnDrop3").click(function(){
     <!-- TODO -->
     <h1 id="footerTermBar"></h1>
     <!--  -->
-    <h1 id="footerEndsLeft" name="footerEndsLeft"></h1>
     
-    <h1 id="footerEndsRight" name="footerEndsRight"></h1>
-
-    <h1 id="footerOutlets" name="footerOutlets"></h1>
 
 
     
