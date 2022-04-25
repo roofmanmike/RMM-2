@@ -353,7 +353,7 @@ hr {
         }
         $('#fieldWidth').val("");
         $('#fieldLength').val("");
-        $('#footerMembrane').text("Field(s):  " + fieldArray + 'sqft');
+        $('#footerMembrane').text("Field(s):  " + fieldArray);
         $('#footerMembrane2').text("Field + waste:  " + fieldSum + 'sqft');
       }
       //open takeoff
@@ -389,7 +389,7 @@ hr {
           let wallWaste = element * .10;
           console.log(wallWaste);
           sumWall += Math.ceil(wallWaste);
-          let wallMessage2 = "Wall total + waste: " + Math.ceil(sumWall);
+          let wallMessage2 = "Wall(s) + waste: " + Math.ceil(sumWall) + 'sqft';
           $('#footerWallText').text(wallMessage2);
         }
         if (arrayWall[arrayWall.length - 1] === 0) {
@@ -539,7 +539,7 @@ $("#btnDrop3").click(function(){
             elemental = parseInt(element);
             sum += elemental;
           }
-        var gutterMessage = "Total gutter: " + sum;
+        var gutterMessage = "Total gutter: " + sum + 'ft';
         var gutterLengths = "Lengths: " + arrayGutter;
         $('#footerMessage').before("<h1>" + gutterMessage + "</h1>");
         $('#footerMessage').text(gutterLengths);
@@ -696,6 +696,7 @@ $("#btnDrop3").click(function(){
 
     <h1 id="footerWallText"></h1>
 <!-- TODO -->
+<!-- CLEAT YES/NO BUTTON -->
     <h1 id="footerCurbs"></h1>
     <h1 id="footerMembraneTotal"></h1>
 <!--  -->
