@@ -112,6 +112,7 @@ hr {
 }
     </style>
   </head>
+  <!-- <button id="openTest">open sesame</button> -->
   <div class="container-fluid">
   <body>
     <div class="fontUp container-fluid">
@@ -182,8 +183,12 @@ hr {
 </div> 
 
 <div id="tester5">
-  <p>Replacement or Retrofit</p>
 
+
+    
+
+
+  <p>Replacement or Retrofit</p>
   <label for="btnt5">3"</label>
   <button type="button" id="btnT5" name="btnT5">REPLACE</button> 
 <button type="button" id="btnT5Done" name="btnT5Done">RETROFIT</button> 
@@ -350,7 +355,6 @@ hr {
         $('#fieldLength').val("");
         $('#footerMembrane').text("Field Area(s):  " + fieldArray);
         $('#footerMembrane2').text("Field Total + waste:  " + fieldSum);
-
       }
       //open takeoff
       $("#proTakeOff").click(function(){
@@ -384,8 +388,8 @@ hr {
           sumWall += element;
           let wallWaste = element * .10;
           console.log(wallWaste);
-          sumWall += wallWaste;
-          let wallMessage2 = "Wall total + waste: " + sumWall;
+          sumWall += Math.ceil(wallWaste);
+          let wallMessage2 = "Wall total + waste: " + Math.ceil(sumWall);
           $('#footerWallText').text(wallMessage2);
         }
         if (arrayWall[arrayWall.length - 1] === 0) {
@@ -396,6 +400,7 @@ hr {
         $('#wallLength').val("");
         $('#footerMembraneFlashing').text(wallMessage);
         console.log(arrayWall);
+        head1.text("RoofManMike");
       }
 //---------------------------------------
 //add more wall
@@ -410,9 +415,7 @@ hr {
       //coping add
       var arrayCoping = [];
       var copeCounter = 0;
-
       function btnCope(){
-        
         const coping = $('#coping').val();
         var copingTtl = coping;
         if (coping == 0) {
@@ -424,7 +427,7 @@ hr {
         for (let index = 0; index < arrayCoping.length; index++) {
           const element = parseInt(arrayCoping[index]);
           copingFeet += element;
-          var sp = Math.round(copingFeet / 10);
+          var sp = Math.ceil(copingFeet / 10);
           splicePlates = Math.round(sp / 2);
           var pcs = splicePlates * 20;
         }
@@ -445,6 +448,31 @@ hr {
         $('#tester4').hide();
         $('#tester5').show();
       });
+      //TESTING BUTTON DELETE WHEN DONE
+// -----------------------------------------
+$("#openTest").click(function(){
+        head1.text("TESTING")
+        f2.hide();
+        f3.hide();
+        $('#tester5').show();
+      });
+//-----------------------------------------
+
+
+var repl3 = 0;
+var retro3 = 0;
+var repl4 = 0;
+var retro4 = 0;
+
+$("#btnDrop3").click(function(){
+ 
+  
+  
+});
+//
+
+
+      // -----------------------------------
       //drain replace 3"
       const arrayDrains = ['3-inch'];
       $("#btnT5").click(function(){
@@ -472,6 +500,8 @@ hr {
         head1.text(arrayT4);
       });
       $("#btnDrainDone").click(function(){
+
+
         $('#tester5').hide();
         $('#tester6').show();
       });
@@ -578,15 +608,12 @@ hr {
         arrayOutlets.push('1');
         outletCount += 1;
         var outletMessage = outletCount + " Outlet(s)";
-
         $('#btnProLabel4').text(outletMessage);
         $('#footerOutlets').text("Outlets: " + outletCount);
-
         console.log(arrayOutlets);
       });
       $("#btnProOutletsDone").click(function(){
         $('#hideOut').hide();
-        
       });
       $("#btnProOutletsDel").click(function(){
         arrayOutlets.pop();
@@ -594,6 +621,7 @@ hr {
         var outletMessage = outletCount + " Outlet(s)";
         $('#btnProLabel4').text(outletMessage);
         console.log(arrayOutlets);
+        $('#footerOutlets').text(outletMessage);
       });
       
       
@@ -667,7 +695,10 @@ hr {
     <h1 id="footerMembraneFlashing"></h1>
 
     <h1 id="footerWallText"></h1>
-
+<!-- TODO -->
+    <h1 id="footerCurbs"></h1>
+    <h1 id="footerMembraneTotal"></h1>
+<!--  -->
     <h1 style="color:white"id="footerMessage"></h1>
 
     <h1 id="footerCoping"></h1>
@@ -677,7 +708,9 @@ hr {
     <h1 id="footerCoping3"></h1>
 
     <h1 id="splicePlates"></h1>
-    
+    <!-- TODO -->
+    <h1 id="footerTermBar"></h1>
+    <!--  -->
     <h1 id="footerEndsLeft" name="footerEndsLeft"></h1>
     
     <h1 id="footerEndsRight" name="footerEndsRight"></h1>
