@@ -145,7 +145,7 @@ hr {
       <hr>
       <h1 id="hh1"><b>Current Market TPO System Online Quote</h1>
         <hr>   
-           
+           <button id="openTest">open sesame</button>
         <div class="card text-center">
             <div id="hiddenDiv3">
           <div class="card-header container-fluid">
@@ -375,7 +375,7 @@ hr {
         let fieldSum = 0;
         for (let index = 0; index < fieldArray.length; index++) {
           const element = parseInt(fieldArray[index]);
-          fieldSum += element;
+          fieldSum += Math.ceil(element);
           let fieldWaste = Math.round(fieldSum * .10);
           fieldSum += fieldWaste;
           console.log(Math.round(fieldWaste));
@@ -409,7 +409,7 @@ hr {
       function wallFig(){
         const wallHeight = $('#wallHeight').val();
         const wallLength = $('#wallLength').val();
-        var ttlWall = wallHeight * wallLength;
+        var ttlWall = Math.ceil(wallHeight * wallLength);
         arrayWall.push(ttlWall);
         sumWall = 0;
         for (let index = 0; index < arrayWall.length; index++) {
@@ -418,7 +418,7 @@ hr {
           let wallWaste = element * .10;
           console.log(wallWaste);
           sumWall += Math.ceil(wallWaste);
-          let wallMessage2 = "Wall(s) + waste: " + Math.ceil(sumWall) + 'sqft';
+          let wallMessage2 = "Wall(s) + waste: " + sumWall + 'sqft';
           $('#footerWallText').text(wallMessage2);
         }
         if (arrayWall[arrayWall.length - 1] === 0) {
@@ -446,7 +446,7 @@ hr {
       var copeCounter = 0;
       function btnCope(){
         const coping = $('#coping').val();
-        var copingTtl = coping;
+        var copingTtl = Math.ceil(coping);
         if (coping == 0) {
           copingTtl = 0;
         }
@@ -480,10 +480,8 @@ hr {
       //TESTING BUTTON DELETE WHEN DONE
 // -----------------------------------------
 $("#openTest").click(function(){
-        head1.text("TESTING")
-        f2.hide();
-        f3.hide();
-        $('#tester5').show();
+          head1.text('lol');
+
       });
 //-----------------------------------------
 
@@ -542,7 +540,7 @@ $("#btnDrop3").click(function(){
       //pro button gutter ADD
       $("#btnProGutterAdd").click(function(){
         //get input val
-        var gutterLen = pgl.val();
+        var gutterLen = Math.ceil(pgl.val());
         if (gutterLen == 0) {
           gutterLen = 0;
         }
