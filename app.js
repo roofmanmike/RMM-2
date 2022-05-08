@@ -5,6 +5,10 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
+app.use(express.static('staticFolder'));
+
+app.set('view engine', 'ejs');
+
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get("/", function(req, res){
@@ -14,17 +18,17 @@ app.post("/", function(req, res){
   let today = new Date();
 let dd = today.getDate();
 
-let mm = today.getMonth()+1; 
+let mm = today.getMonth()+1;
 const yyyy = today.getFullYear();
-if(dd<10) 
+if(dd<10)
 {
     dd=`0${dd}`;
-} 
+}
 
-if(mm<10) 
+if(mm<10)
 {
     mm=`0${mm}`;
-} 
+}
 today = `${mm}-${dd}-${yyyy}`;
 
 var num1 = Number(req.body.num1);
@@ -63,14 +67,14 @@ res.write('<h1>' + squares + ' sq ft</h1>');
 res.write('<h1>Before termination(s) and watershed: <span style="color:green">$</span>' + area + '</h1><hr>');
 if (gutter >= 1) {
   gutter = ob.format(gutter);
-  res.write('<h1>Gutters: <span style="color:green">$</span>' + gutter + '</h1>');  
+  res.write('<h1>Gutters: <span style="color:green">$</span>' + gutter + '</h1>');
 }
 if (drains > 0){
   res.write('<h1>Detail for ' + drains + ' sumps: <span style="color:green">$</span>' + drainCount);
 }
 if (coping >= 1) {
   coping = ob.format(coping);
-  res.write('<h1>Coping: <span style="color:green">$</span>' + coping + '</h1>');  
+  res.write('<h1>Coping: <span style="color:green">$</span>' + coping + '</h1>');
 }
 if (height >= 1) {
   height = ob.format(height);
