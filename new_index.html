@@ -295,7 +295,7 @@ hr {
           <button type="button" id="drainNo">NO</button><br>
                 </div>
             <div id="contLength">
-                <h1>Length from watershed run-off to peak</h1>
+                <h1 id="scrollTop1">Length from watershed run-off to peak</h1>
               <img src="get_length_tpo.jpg" alt="">
                 <input type="number" id="length" name="num1" class="container-fluid" placeholder="*LENGTH"><br><br>
       <button type="button" id="btnNo">ENTER</button><br>
@@ -349,7 +349,7 @@ hr {
       let head1 = $('#hh1');
       let t2 = $('#tester2');
       let pgl = $('#proGutterInput');
-    $('#contDrain').hide();
+      $('#contDrain').hide();
       $('#contLength').hide();
       $('#contGutter').hide();
       $('#contCoping').hide();
@@ -398,6 +398,7 @@ hr {
       //got field open walls
       $('#tester2').hide();
       head1.text('Wall Flashing');
+      head1.scrollTop(1);
       $('#tester3').show();
       });
       //function wall figure
